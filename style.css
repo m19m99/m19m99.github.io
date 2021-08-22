@@ -367,6 +367,36 @@ figure img.mini {
   font-size: 14px;
 }
 
+@media screen and (max-width: 780px){
+
+  h2{
+    margin-top: 30%;
+  }
+
+  .titre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5%;
+  }
+
+  nav li{
+    
+    margin-bottom: 3%;
+  }
+
+  .icone{
+      display: none;
+  }
+
+  p{
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 5%;
+  }
+
+}
+
 
 
 
