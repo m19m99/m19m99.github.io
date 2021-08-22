@@ -2,10 +2,6 @@
 
 Le schéma décrivant la base se trouve ici : https://dev.mysql.com/doc/employee/en/sakila-structure.html
 
-Vous pouvez accéder à la base à l'adresse suivante : 
-```sh
-PASSWORD=pipou100f00rm47ion psql --host=asciiparait.fr --port 8131 -U courssqldebutant --dbname employes
-```
 
 ## Requêtes d'interrogation simples. 
 Effectuez les requêtes suivantes : 
