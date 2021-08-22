@@ -156,13 +156,60 @@ o
 
 
  24. Combien de manager différents ont eu les différents départements (dept_no, dept_name, nbManagers), Classé par nom de département
+ 				
+ 				Select distinct dept_manager.dept_no, dept_name, sum(dept_manager.emp_no) as nbManagers from dept_manager
+ 				join employees on employees.emp_no = dept_manager.emp_no
+ 				join departments on departments.dept_no = dept_manager.dept_no
+ 				group by dept_manager.dept_no, departments.dept_name
+ 				order by dept_name;
 
 
 
- 25. Quel est le département de la société qui a le salaire moyen le plus élevé (dept_no, dept_name, salaireMoyen) 
+ 25. Quel est le département de la société qui a le salaire moyen le plus élevé (dept_no, dept_name, salaireMoyen)
+ d007  | Sales   | 80667.605755337693
+
+ 
+ 				select distinct dept_emp.dept_no, dept_name, avg(salary) as "salaireMoyen" from departments
+ 				join dept_emp on dept_emp.dept_no = departments.dept_no
+ 				join salaries on salaries.emp_no = dept_emp.emp_no
+ 				group by dept_emp.dept_no, departments.dept_name
+ 				order by "salaireMoyen" desc;
+ 				
 
  26. Quels sont les employés qui ont eu le titre de 'Senior Staff' sans avoir le titre de 'Staff' ( emp_no , birth_date , first_name , last_name , gender , hire_date )
+ 				
+ 				select employees.emp_no, birth_date, first_name, last_name, gender, hire_date, titles.title FROM employees
+                join titles ON employees.emp_no = titles.emp_no
+                where titles.title = 'Senior Staff'
+                and titles.title != 'Staff';
+
 
  27. Indiquer le titre et le salaire de chaque employé lors de leur embauche (emp_no, first_name, last_name, title, salary)
 
+                select employees.emp_no, employees.first_name, employees.last_name, titles.title, salaries.salary FROM employees
+                join titles on titles.emp_no = employees.emp_no
+                join salaries on salaries.emp_no = employees.emp_no
+                where employees.hire_date = salaries.from_date
+                and employees.hire_date = titles.from_date;
+
+
  28. Quels sont les employés dont le salaire a baissé (emp_no, first_name, last_name)
+
+
+                    create view normale AS
+                    select salaries.emp_no, salaries.salary, salaries.from_date, salaries.to_date, employees.hire_date FROM salaries
+                    join employees ON employees.emp_no = salaries.emp_no
+                    where salaries.from_date = employees.hire_date;
+
+                    create view pasnormale AS
+                    select salaries.emp_no, salaries.salary, salaries.from_date, salaries.to_date, employees.hire_date FROM salaries
+                    join employees ON employees.emp_no = salaries.emp_no
+                    where salaries.from_date != employees.hire_date;
+
+
+
+                    select DISTINCT employees.emp_no, employees.first_name, employees.last_name FROM employees
+                    join salaries on salaries.emp_no = employees.emp_no
+                    join plushaut on plushaut.emp_no = employees.emp_no
+                    join plusbas on plusbas.emp_no = employees.emp_no
+                    where normal.salary > pasnormale.salary;
