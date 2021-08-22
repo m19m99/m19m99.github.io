@@ -397,6 +397,31 @@ figure img.mini {
 
 }
 
+@media screen and (max-width: 1024px) {
+  
+  .menu{
+    margin-left: 20%;
+  }
+}
+
+
+@media screen and (max-width: 375px){
+
+  .menu{
+    margin-left: 25%;
+  }
+}
+
+@media screen and (max-width: 320px){
+
+  .menu{
+    margin-left: 15%;
+  }
+  h2{
+    margin-top: 40%;
+  }
+
+}
 
 
 
