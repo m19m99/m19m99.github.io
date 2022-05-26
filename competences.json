@@ -1,0 +1,60 @@
+{
+
+    "competences": [
+        
+            {
+                "name": "PHP",
+                "description": "Le PHP fut un des languages les plus travaillé, pendant ma formation. Je maîtrise essentiellement tout les aspect de ce languages. Vous pouvez voir plus bas dans un mes projets ('stationnement CIQ') qui a nécéssité majoritairement l'utilisation du PHP.",
+                "alt" : "capture d'écran de code",
+                "img" : "media/php1.png"
+    
+            },
+       
+
+            {
+                "name": "JavaScript",
+                "description": "Un des languages j'ai utilisé pour le projet actutu accèssible ci-dessous. Il est aussi utilisé sur ce site avec les pages autre que la page d'accueil, généré dynamiquement à l'aide de JS ainsi que JSON ",
+                "alt" : "capture d'écran de code",
+                "img" : "media/js1.png"
+    
+            },
+
+            {
+                
+                "name": "SQL",
+                "description": "Ce language à été utilisé dans le projet stationnement CIQ. Pour la création, et l'administration de la base de données.",
+                "alt" : "capture d'écran de code",
+                "img" : "media/sql1.png"
+    
+            },
+
+            {
+               
+
+                "name": "Html 5",
+                "description": "Utilisé dans tout mes projets le HTML est le language de base à connaître .",
+                "alt" : "capture d'écran de code",
+                "img" : "media/html1.png"
+    
+    
+            },
+
+            {
+                "name": "CSS 3",
+                "description": "Le CSS est aussi un des languages de base à connaître même si il y a encore est toujours des choses à apprendre",
+                "alt" : "capture d'écran de code",
+                "img" : "media/css1.png"
+    
+            },
+
+            {
+                "name": "Maquettage",
+                "description": "Il y a encore beaucoup de choses que je dois apprendre à propos de cette compétences même si les bases sont acquises.",
+                "alt" : "capture d'écran de code",
+                "img" : "media/maquette.png"
+    
+            }
+        ]
+
+    }
+   
